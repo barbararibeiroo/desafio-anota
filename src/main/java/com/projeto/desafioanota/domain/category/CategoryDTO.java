@@ -1,0 +1,4 @@
+package com.projeto.desafioanota.domain.category;
+
+public record CategoryDTO(String title, String description, String ownerId){
+}
