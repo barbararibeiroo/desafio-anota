@@ -6,10 +6,8 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.annotation.processing.Generated;
 
-
-@Document(collection = "category")
+@Document(collection = "categories")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,4 +19,11 @@ public class Category {
     private String description;
     private String ownerId;
 
+    public Category(CategoryDTO categoryDTO){
+        this.title = categoryDTO.title();
+        this.description = categoryDTO.description();
+        this.ownerId = categoryDTO.ownerId();
+    }
+
 }
+
